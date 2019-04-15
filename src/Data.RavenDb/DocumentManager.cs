@@ -21,13 +21,14 @@ namespace WheelMUD.Data.RavenDb
         /// <param name="playerDocument">The player document to be saved.</param>
         public static void SavePlayerDocument(PlayerDocument playerDocument)
         {
+            /* @@@ UPGRADING
             using (var ravenSession = DalUtils.GetRavenSession())
             {
                 // RavenDB will automatically either insert a new document or update the
                 // existing document with this document ID, as appropriate.
                 ravenSession.Store(playerDocument);
                 ravenSession.SaveChanges();
-            }
+            }*/
         }
 
         /// <summary>Loads the player document.</summary>
@@ -35,12 +36,14 @@ namespace WheelMUD.Data.RavenDb
         /// <returns>The loaded PlayerDocument.</returns>
         public static PlayerDocument LoadPlayerDocument(long databaseId)
         {
+            /* @@@ UPGRADING
             using (var ravenSession = DalUtils.GetRavenSession())
             {
                 return (from pd in ravenSession.Query<PlayerDocument>()
                         where pd.DatabaseId == databaseId
                         select pd).FirstOrDefault();
-            }
+            }*/
+            return null;
         }
 
         /// <summary>Loads the player document.</summary>
@@ -48,12 +51,14 @@ namespace WheelMUD.Data.RavenDb
         /// <returns>The loaded PlayerDocument.</returns>
         public static PlayerDocument LoadPlayerDocument(string playerName)
         {
+            /* @@@ UPGRADING
             using (var ravenSession = DalUtils.GetRavenSession())
             {
                 return (from pd in ravenSession.Query<PlayerDocument>()
                         where pd.Name.Equals(playerName, StringComparison.CurrentCultureIgnoreCase)
                         select pd).FirstOrDefault();
-            }
+            }*/
+            return null;
         }
     }
 }

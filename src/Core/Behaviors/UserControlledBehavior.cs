@@ -11,7 +11,7 @@ namespace WheelMUD.Core
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Raven.Imports.Newtonsoft.Json;
+    //using Raven.Imports.Newtonsoft.Json;
     using WheelMUD.Interfaces;
 
     /// <summary>A security role.</summary>
@@ -61,11 +61,11 @@ namespace WheelMUD.Core
         ////public List<RoleRecord> RoleRecords { get; private set; }
 
         /// <summary>Gets the current list of <see cref="Role"/> names associated with this user.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public List<Role> Roles { get; private set; }
 
         /// <summary>Gets or sets the controller of the Thing.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public IController Controller { get; set; }
         
         /// <summary>Gets or sets the number of rows this user's client can handle displaying as a single "page".</summary>
@@ -73,7 +73,7 @@ namespace WheelMUD.Core
 
         /// <summary>Gets the view engine.</summary>
         /// <value>The view engine.</value>
-        [JsonIgnore]
+        //[JsonIgnore]
         public ViewEngine ViewEngine { get; private set; }
 
         /// <summary>Gets the role of the specified name, if present.</summary>

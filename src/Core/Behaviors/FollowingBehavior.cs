@@ -14,7 +14,7 @@ namespace WheelMUD.Core.Behaviors
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using Raven.Imports.Newtonsoft.Json;
+    //using Raven.Imports.Newtonsoft.Json;
     using WheelMUD.Core.Events;
     using WheelMUD.Utilities;
 
@@ -49,7 +49,7 @@ namespace WheelMUD.Core.Behaviors
         }
 
         /// <summary>Gets or sets the target being followed.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual Thing Target
         {
             get

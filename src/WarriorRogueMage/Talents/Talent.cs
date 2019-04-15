@@ -13,7 +13,7 @@ namespace WarriorRogueMage
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Raven.Imports.Newtonsoft.Json;
+    //using Raven.Imports.Newtonsoft.Json;
     using WheelMUD.Core;
 
     /// <summary>Class to represent the basic Talent in the Warrior, Rogue, and Mage game system.</summary>
@@ -58,7 +58,7 @@ namespace WarriorRogueMage
         }
 
         /// <summary>Gets or sets the player thing.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public Thing PlayerThing { get; set; }
 
         /// <summary>Gets the description.</summary>

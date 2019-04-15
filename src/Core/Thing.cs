@@ -15,7 +15,7 @@ namespace WheelMUD.Core
     using System.IO;
     using System.Linq;
     using System.Xml.Serialization;
-    using Raven.Imports.Newtonsoft.Json;
+    //using Raven.Imports.Newtonsoft.Json;
     using WheelMUD.Core.Events;
     using WheelMUD.Interfaces;
 
@@ -25,7 +25,7 @@ namespace WheelMUD.Core
     /// addition/removal/tweaking of the Thing's attached Behaviors.  For instance, a "player" is
     /// a Thing that has a PlayerBehavior (and likely a UserControlledBehavior, and so on).
     /// </remarks>
-    [JsonObject(IsReference = true)]
+    //[JsonObject(IsReference = true)]
     public sealed class Thing : IThing, IPersistable, IDisposable
     {
         /// <summary>The synchronization locking object.</summary>
@@ -129,11 +129,11 @@ namespace WheelMUD.Core
         public string Description { get; set; }
 
         /// <summary>Gets or sets the parent of this thing, IE a container.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public Thing Parent { get; set; }
 
         /// <summary>Gets a list of all parents of this thing, or an empty list if there are none.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public List<Thing> Parents
         {
             get
@@ -271,7 +271,7 @@ namespace WheelMUD.Core
             var playerBehavior = this.Behaviors.FindFirst<PlayerBehavior>();
             if (playerBehavior != null)
             {
-                playerBehavior.SaveWholePlayer();
+                // @@@ UPGRADING: playerBehavior.SaveWholePlayer();
             }
             else
             {
@@ -279,7 +279,7 @@ namespace WheelMUD.Core
                 // @@@ TODO: Implement saving of core thing -> saving of housed Behaviors too.
                 if (this.Parent.HasBehavior<PlayerBehavior>())
                 {
-                    this.Parent.Behaviors.FindFirst<PlayerBehavior>().SaveWholePlayer();
+                    // @@@ UPGRADING: this.Parent.Behaviors.FindFirst<PlayerBehavior>().SaveWholePlayer();
                 }
                 else
                 {

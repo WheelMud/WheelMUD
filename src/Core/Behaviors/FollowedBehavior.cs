@@ -13,7 +13,7 @@
 namespace WheelMUD.Core.Behaviors
 {
     using System.Collections.Generic;
-    using Raven.Imports.Newtonsoft.Json;
+    //using Raven.Imports.Newtonsoft.Json;
 
     /// <summary>
     /// <para>
@@ -45,7 +45,7 @@ namespace WheelMUD.Core.Behaviors
         }
 
         /// <summary>Gets the list of followers.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual HashSet<Thing> Followers { get; private set; }
 
         /// <summary>Sets the default properties of this behavior instance.</summary>

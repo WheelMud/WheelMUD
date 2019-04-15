@@ -13,10 +13,10 @@ namespace WheelMUD.Core
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Globalization;
-    using Raven.Imports.Newtonsoft.Json;
+    //using Raven.Imports.Newtonsoft.Json;
     using WheelMUD.Core.Events;
     using WheelMUD.Data.Entities;
-    using WheelMUD.Data.RavenDb;
+    //using WheelMUD.Data.RavenDb;
     using WheelMUD.Data.Repositories;
     using WheelMUD.Interfaces;
 
@@ -60,7 +60,7 @@ namespace WheelMUD.Core
         /// This is used to make it easier on external systems that need to set this. 
         /// For example the character creation system is one of those systems.
         /// </remarks>
-        [JsonIgnore]
+        //[JsonIgnore]
         public string Name 
         {
             get { return this.PlayerData.DisplayName; }
@@ -73,12 +73,12 @@ namespace WheelMUD.Core
         /// This is used to make it easier on external systems that need to set this. 
         /// For example the character creation system is one of those systems.
         /// </remarks>
-        [JsonIgnore]
+        //[JsonIgnore]
         public int CurrentRoomId { get; set; }
 
         /// <summary>Gets the player's password.</summary>
         /// <remarks>@@@ TODO: Gets the player's encrypted password.</remarks>
-        [JsonIgnore]
+        //[JsonIgnore]
         public string Password
         {
             get { return this.PlayerData.Password; }
@@ -86,11 +86,11 @@ namespace WheelMUD.Core
         }
 
         /// <summary>Gets the event processor for this player.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public PlayerEventProcessor EventProcessor { get; private set; }
 
         /// <summary>Gets or sets the session ID for this player.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public string SessionId { get; set; }
 
         /// <summary>Gets or sets the prompt for this player.</summary>
@@ -106,15 +106,15 @@ namespace WheelMUD.Core
         public DateTime? WhenWentAFK { get; set; }
 
         /// <summary>Gets or sets the player specific data.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public PlayerRecord PlayerData { get; set; }
 
         /// <summary>Gets or sets the roles for this player.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public List<PlayerRoleRecord> RoleData { get; set; }
 
         /// <summary>Gets the friends of this player.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public ReadOnlyCollection<string> Friends
         {
             get { return this.friends.AsReadOnly(); }
@@ -194,6 +194,7 @@ namespace WheelMUD.Core
             // @@@ TODO: Need to do this with all the other custom lists and collections, like friends and inventory.
         }
 
+        /* @@@ UPGRADING
         /// <summary>Save the whole player Thing (not just this PlayerBehavior).</summary>
         public void SaveWholePlayer()
         {
@@ -257,7 +258,7 @@ namespace WheelMUD.Core
                 // Save to the document database
                 DocumentManager.SavePlayerDocument(bundle); 
             }
-        }
+        }*/
 
         /// <summary>Creates the missing player document in the NoSQL (RavenDb) data store.</summary>
         /// <remarks>
@@ -267,7 +268,7 @@ namespace WheelMUD.Core
         public void CreateMissingPlayerDocument()
         {
             this.Prompt = ">";
-            this.SaveWholePlayer();
+            // @@@ UPGRADING this.SaveWholePlayer();
         }
 
         /// <summary>Releases unmanaged and, optionally, managed resources.</summary>

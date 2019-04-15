@@ -10,14 +10,14 @@
 namespace WheelMUD.Core
 {
     using System.Collections.Generic;
-    using Raven.Imports.Newtonsoft.Json;
+    //using Raven.Imports.Newtonsoft.Json;
     using WheelMUD.Core.Enums;
 
     /// <summary>Encapsulates sensory behavior.</summary>
     public class SensesBehavior : Behavior
     {
         /// <summary>The synchronization locking object.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         private readonly object lockObject = new object();
 
         /// <summary>Initializes a new instance of the SensesBehavior class.</summary>
@@ -39,7 +39,7 @@ namespace WheelMUD.Core
         public SenseManager Senses { get; set; }
 
         /// <summary>Gets the things last perceived by this thing.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public List<Thing> PerceivedThings { get; private set; }
 
         /// <summary>Have the entity perceive a list of possible exits with its senses.</summary>

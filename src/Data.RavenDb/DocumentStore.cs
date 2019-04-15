@@ -10,6 +10,7 @@
 
 namespace WheelMUD.Data.RavenDb
 {
+    /* @@@ UPGRADING
     using Raven.Client.Embedded;
 
     /// <summary>Encapsulates the Raven.Client.Embedded.EmbeddableDocumentStore into a singleton.</summary>
@@ -32,5 +33,5 @@ namespace WheelMUD.Data.RavenDb
         {
             get { return SingletonInstance; }
         }
-    }
+    }*/
 }

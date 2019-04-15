@@ -10,7 +10,7 @@
 
 namespace WheelMUD.Core
 {
-    using Raven.Imports.Newtonsoft.Json;
+    //using Raven.Imports.Newtonsoft.Json;
     using WheelMUD.Interfaces;
 
     /// <summary>Holds data for an individual rule-set skill.</summary>
@@ -28,7 +28,7 @@ namespace WheelMUD.Core
         public string ControllingAttribute { get; set; }
 
         /// <summary>Gets or sets the player thing for this skill.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public Thing PlayerThing { get; set; }
 
         /// <summary>Called when a parent has just been assigned to this skill. (Refer to this.PlayerThing)</summary>

@@ -10,7 +10,7 @@
 
 namespace WheelMUD.Core
 {
-    using Raven.Imports.Newtonsoft.Json;
+    //using Raven.Imports.Newtonsoft.Json;
     using WheelMUD.Core.Events;
     using WheelMUD.Interfaces;
 
@@ -18,7 +18,7 @@ namespace WheelMUD.Core
     public abstract class BaseStat
     {
         /// <summary>The synchronization locking object.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         private readonly object lockObject = new object();
 
         /// <summary>The current value of this stat.</summary>
@@ -128,11 +128,11 @@ namespace WheelMUD.Core
 
         /// <summary>Gets or sets the parent Thing this stat belongs to.</summary>
         /// <remarks>@@@ TODO: IMPLEMENT OnAdd AND OnRemove REACTIONS WHEN CHANGING PARENT AS PER BEHAVIORS!</remarks>
-        [JsonIgnore]
+        //[JsonIgnore]
         public Thing Parent { get; set; }
 
         /// <summary>Gets or sets the host that this stat applies to.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         protected IController Host { get; set; }
 
         /// <summary>Called when a parent Thing has just been assigned this game element.</summary>

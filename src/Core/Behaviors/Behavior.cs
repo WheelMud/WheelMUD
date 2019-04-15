@@ -9,7 +9,7 @@ namespace WheelMUD.Core
 {
     using System;
     using System.Collections.Generic;
-    using Raven.Imports.Newtonsoft.Json;
+    //using Raven.Imports.Newtonsoft.Json;
     using WheelMUD.Interfaces;
     using WheelMUD.Utilities;
 
@@ -17,7 +17,7 @@ namespace WheelMUD.Core
     public abstract class Behavior : IPersistsWithPlayer
     {
         /// <summary>The synchronization locking object.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         private readonly object lockObject = new object();
 
         /// <summary>Initializes a new instance of the Behavior class.</summary>
@@ -42,7 +42,7 @@ namespace WheelMUD.Core
         public long ID { get; set; }
 
         /// <summary>Gets or sets the parent of this behavior instance.</summary>
-        [JsonIgnore]
+        //[JsonIgnore]
         public Thing Parent { get; set; }
 
         /// <summary>Called when a parent has just been assigned to this behavior. (Refer to this.Parent)</summary>

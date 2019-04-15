@@ -15,7 +15,7 @@ namespace WheelMUD.Core
     using System.Linq;
     using System.Text;
     using WheelMUD.Core.Events;
-    using WheelMUD.Data.RavenDb;
+    //using WheelMUD.Data.RavenDb;
     using WheelMUD.Interfaces;
 
     /// <summary>High level manager that provides tracking and global collection of online players.</summary>
@@ -232,6 +232,7 @@ namespace WheelMUD.Core
                 // Make sure that the playerBehavior has a parent set.
                 playerBehavior.Parent = player;
 
+                /* @@@ UPGRADING
                 // Load game data from disk (RavenDb/NoSQL)
                 PlayerDocument pd = this.LoadPlayerDocument(playerBehavior.PlayerData.ID);
                 if (pd == null)
@@ -260,7 +261,7 @@ namespace WheelMUD.Core
                 // Get SensesBehavior and UserControlledBehavior from the PlayerDocument.
                 var sensesBehavior = pd.Behaviors.OfType<SensesBehavior>().FirstOrDefault();
                 var userControlledBehavior = pd.Behaviors.OfType<UserControlledBehavior>().FirstOrDefault();
-
+                
                 // Setup the controlled behavior controller.
                 userControlledBehavior.Controller = session;
 
@@ -342,7 +343,7 @@ namespace WheelMUD.Core
                 {
                     // @@@ TODO: Login denied? Back out of the session, disconnect, etc.
                     throw new NotImplementedException("Cancellation of login event is not yet supported.");
-                }
+                }*/
             }
 
             // Finally, if the newly-logged in character replaced an old connection, notify the new 
@@ -403,14 +404,16 @@ namespace WheelMUD.Core
             }
         }
 
+        /* @@@ UPGRADING
         /// <summary>Load the player document for the specified player ID.</summary>
         /// <param name="databaseId">The database ID of the player.</param>
         /// <returns>The associated PlayerDocument, if there is one, else null.</returns>
         private PlayerDocument LoadPlayerDocument(long databaseId)
         {
             return DocumentManager.LoadPlayerDocument(databaseId);
-        }
+        }*/
 
+        /* @@@ UPGRADING
         /// <summary>Translates from <see cref="PlayerDocument"/> to a <see cref="Thing"/>.</summary>
         /// <param name="player">The player.</param>
         /// <param name="playerDocument">The player document.</param>
@@ -440,7 +443,7 @@ namespace WheelMUD.Core
             {
                 player.Children.Add(persistedChild as Thing);
             }
-        }
+        }*/
 
         /// <summary>Find a logged-in player by user name.</summary>
         /// <param name="userName">The user name to search for.</param>
