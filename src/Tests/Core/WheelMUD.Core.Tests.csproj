@@ -55,6 +55,9 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Behaviors\SimpleTestBehavior.cs" />
     <Compile Include="Behaviors\TestBehaviorManager.cs" />
     <Compile Include="Behaviors\TestFollowingBehavior.cs" />

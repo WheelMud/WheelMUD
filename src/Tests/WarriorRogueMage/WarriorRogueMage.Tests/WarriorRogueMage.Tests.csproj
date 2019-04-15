@@ -79,6 +79,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="..\..\Core\TestFramework\TestThingID.cs">
       <Link>TestFramework\TestThingID.cs</Link>
     </Compile>

@@ -4,20 +4,20 @@
 //   subject to the Microsoft Public License.  All other rights reserved.
 // </copyright>
 // <summary>
-//   Global Assembly information for the WheelMUD solution.
+//   Global Assembly information inherited by all projects in the WheelMUD solution.
+//   Additional identifying information will be housed in each AssemblyInfo, with a
+//   file "link" in each library to inherit these as well.
 // </summary>
 //-----------------------------------------------------------------------------
 
 using System.Reflection;
+using System.Runtime.InteropServices;
 
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
 [assembly: AssemblyProduct("WheelMUD Multi-User Dungeon/Dimension Server")]
-
 [assembly: AssemblyCompany("WheelMUD Development Team")]
+[assembly: AssemblyCopyright("Copyright © WheelMUD Development Team 1998-2019")]
 
-[assembly: AssemblyCopyright("Copyright © WheelMUD Development Team 1998-2015")]
+[assembly: ComVisible(false)] // Do not need to expose any of these to COM.
 
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]
@@ -25,16 +25,4 @@ using System.Reflection;
 [assembly: AssemblyConfiguration("Release")]
 #endif
 
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.4.5.0")]
-
-[assembly: AssemblyFileVersion("0.4.5.0")]
+[assembly: AssemblyVersion("0.4.5.*")]

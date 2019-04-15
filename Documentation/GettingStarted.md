@@ -2,7 +2,7 @@
 
 ## Prerequisites
 Basically any modern Windows environment with any popular C# development environment, can be used.
-However, we currently recommend using [Visual Studio](https://visualstudio.microsoft.com/downloads/) 2017. The free community edition works.
+However, we currently recommend using [Visual Studio](https://visualstudio.microsoft.com/downloads/) 2019. The free community edition works.
 For more details, check the [Basic Prerequisites](BasicPrerequisites.md) page.
 
 ## Additional Requirements
