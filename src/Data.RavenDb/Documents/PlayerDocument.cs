@@ -12,6 +12,7 @@ namespace WheelMUD.Data.RavenDb
 {
     using System.Collections.Generic;
     using WheelMUD.Interfaces;
+
     /// <summary>The representation of the player in the document database.</summary>
     public class PlayerDocument
     {
