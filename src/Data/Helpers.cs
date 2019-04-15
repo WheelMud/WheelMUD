@@ -9,6 +9,7 @@ namespace WheelMUD.Data
 {
     using System;
     using System.Data;
+    using System.Linq;
 
     /// <summary>Helper methods for the WheelMUD.Data namespace.</summary>
     public class Helpers
@@ -34,6 +35,14 @@ namespace WheelMUD.Data
                     provider = HelperConfigInfo.Instance.Provider;
 
                     var cache = new ProviderCache();
+                    if (!cache.Providers.Any())
+                    {
+                        // NOTE: If you hit this, most likely you haven't rebuilt the full solution with this build
+                        // flavor; These providers are loaded in through MEF, to allow for extension without having
+                        // to make hard reference changes. Thus, your IDE may not have realized that the DB project
+                        // needed to be built.
+                        throw new DllNotFoundException("No DB Providers were found!");
+                    }
 
                     try
                     {
@@ -79,7 +88,6 @@ namespace WheelMUD.Data
         public static string GetCurrentProviderName()
         {
             HelperConfigInfo config = HelperConfigInfo.Instance;
-
             return config.Provider;
         }
 
@@ -88,7 +96,6 @@ namespace WheelMUD.Data
         public static string GetCurrentConnectionStringName()
         {
             HelperConfigInfo config = HelperConfigInfo.Instance;
-
             return config.ConnectionStringName;
         }
 
@@ -97,7 +104,6 @@ namespace WheelMUD.Data
         public static string GetCurrentConnectionString()
         {
             HelperConfigInfo config = HelperConfigInfo.Instance;
-
             return config.ConnectionString;
         }
     }
