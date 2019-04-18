@@ -11,20 +11,15 @@
 namespace WheelMUD.Tests.WRMCombat
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-    using NUnit.Framework;
-
     using WarriorRogueMage;
     using WarriorRogueMage.Attributes;
     using WarriorRogueMage.Behaviors;
     using WarriorRogueMage.Skills;
     using WarriorRogueMage.Stats;
-
     using WheelMUD.Core;
 
     /// <summary>This is a test class for WRMCombatTest and is intended to contain all WRMCombatTest Unit Tests.</summary>
     [TestClass]
-    [TestFixture]
     public class TestWrmCombat
     {
         /// <summary>Common actors in the test.</summary>
@@ -32,7 +27,6 @@ namespace WheelMUD.Tests.WRMCombat
 
         /// <summary>Initializes data for this test class.</summary>
         [TestInitialize]
-        [SetUp]
         public void Init()
         {
             this.playerThing = new Thing() { Name = "PlayerThing", ID = TestThingID.Generate("testthing") };
@@ -70,7 +64,6 @@ namespace WheelMUD.Tests.WRMCombat
 
         /// <summary>A test for checking for the awareness skill using an instance.</summary>
         [TestMethod]
-        [Test]
         public void CheckAwarenessByInstanceTest()
         {
             GameSkill awareness = this.playerThing.FindGameSkill<SkillAwareness>();
@@ -80,7 +73,6 @@ namespace WheelMUD.Tests.WRMCombat
 
         /// <summary>A test for checking for the awareness skill using the skill name.</summary>
         [TestMethod]
-        [Test]
         public void CheckAwarenessByNameTest()
         {
             GameSkill awareness = this.playerThing.FindGameSkill("Awareness");
@@ -90,7 +82,6 @@ namespace WheelMUD.Tests.WRMCombat
 
         /// <summary>A test for CombatSession.</summary>
         [TestMethod]
-        [Test]
         public void CombatSessionTest()
         {
             var expected = new GameCombatSession();
@@ -102,7 +93,6 @@ namespace WheelMUD.Tests.WRMCombat
 
         /// <summary>A test for DoInititiveRoll.</summary>
         [TestMethod]
-        [Test]
         public void DoInititiveRollTest()
         {
             Die combatDie = DiceService.Instance.GetDie(6);
@@ -115,7 +105,6 @@ namespace WheelMUD.Tests.WRMCombat
 
         /// <summary>A test for Instance.</summary>
         [TestMethod]
-        [Test]
         public void InstanceTest()
         {
             var actual = WrmCombat.Instance;

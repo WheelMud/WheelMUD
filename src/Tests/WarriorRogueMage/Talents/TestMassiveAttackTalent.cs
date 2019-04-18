@@ -1,31 +1,30 @@
 ﻿//-----------------------------------------------------------------------------
-// <copyright file="TestChampionTalent.cs" company="WheelMUD Development Team">
+// <copyright file="TestMassiveAttackTalent.cs" company="WheelMUD Development Team">
 //   Copyright (c) WheelMUD Development Team. See LICENSE.txt. This file is
 //   subject to the Microsoft Permissive License. All other rights reserved.
 // </copyright>
 // <summary>
-//   Tests the Champion talent.
+//   Tests the TalentMassiveAttack class.
 // </summary>
 //-----------------------------------------------------------------------------
 
 namespace WheelMUD.Tests.Talents
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using NUnit.Framework;
     using WarriorRogueMage;
     using WarriorRogueMage.Attributes;
     using WarriorRogueMage.Behaviors;
     using WarriorRogueMage.Stats;
     using WheelMUD.Core;
 
-    [TestClass][TestFixture]
-    public class TestChampionTalent
+    /// <summary>Tests the TalentMassiveAttack class.</summary>
+    [TestClass]
+    public class TestMassiveAttackTalent
     {
         /// <summary>Common actors in the test.</summary>
         private Thing playerThing;
 
         [TestInitialize]
-        [SetUp]
         public void Init()
         {
             var testBehavior = new TalentsBehavior(null);
@@ -33,7 +32,6 @@ namespace WheelMUD.Tests.Talents
             var rogueAttribute = new RogueAttribute();
             var mageAttribute = new MageAttribute();
             var damageStat = new DamageStat();
-            var attackStat = new AttackStat();
 
             this.playerThing = new Thing() { Name = "PlayerThing", ID = TestThingID.Generate("testthing") };
 
@@ -47,56 +45,48 @@ namespace WheelMUD.Tests.Talents
 
             rogueAttribute.Parent = this.playerThing;
             playerThing.AddAttribute(mageAttribute);
-            
+
             warriorAttribute.SetValue(10, playerThing);
             rogueAttribute.SetValue(10, playerThing);
             mageAttribute.SetValue(10, playerThing);
 
             playerThing.Stats.Add(damageStat.Name, damageStat);
-            playerThing.Stats.Add(attackStat.Name, attackStat);
         }
 
-        /// <summary>Tests the champion talent added mechanism.</summary>
+        /// <summary>Tests the massive attack talent added mechanism.</summary>
         [TestMethod]
-        [Test]
-        public void TestChampionTalentAddedMechanism()
+        public void TestMassiveAttackTalentAddedMechanism()
         {
-            var champion = new ChampionTalent();
+            var massiveAttack = new MassiveAttackTalent();
 
-            this.playerThing.Behaviors.FindFirst<TalentsBehavior>().AddTalent(champion);
+            this.playerThing.Behaviors.FindFirst<TalentsBehavior>().AddTalent(massiveAttack);
 
             var behavior = this.playerThing.Behaviors.FindFirst<TalentsBehavior>();
 
-            Verify.IsTrue(behavior.ManagedTalents.Contains(champion));
-            Verify.IsNotNull(behavior.FindFirst<ChampionTalent>().PlayerThing);
+            Verify.IsTrue(behavior.ManagedTalents.Contains(massiveAttack));
+            Verify.IsNotNull(behavior.FindFirst<MassiveAttackTalent>().PlayerThing);
 
-            behavior.RemoveTalent(champion);
+            behavior.RemoveTalent(massiveAttack);
         }
 
-        /// <summary>Tests the champion talent auto set rule.</summary>
+        /// <summary>Tests the massive attack talent auto set rule.</summary>
         [TestMethod]
-        [Test]
-        public void TestChampionTalentAutosetRule()
+        public void TestMassiveAttackTalentAutosetRule()
         {
-            var champion = new ChampionTalent();
+            var massiveAttack = new MassiveAttackTalent();
 
             var behavior = this.playerThing.Behaviors.FindFirst<TalentsBehavior>();
-            
-            var attackStat = this.playerThing.FindGameStat("Attack");
-            int oldAttackValue = attackStat.Value;
-            
+
             var damageStat = this.playerThing.FindGameStat("Damage");
-            int oldDamageValue = damageStat.Value;
+            int oldDamaveValue = damageStat.Value;
 
-            behavior.AddTalent(champion);
+            behavior.AddTalent(massiveAttack);
 
-            Verify.AreNotEqual(oldAttackValue, attackStat.Value);
-            Verify.AreNotEqual(oldDamageValue, damageStat.Value);
+            Verify.AreNotEqual(oldDamaveValue, damageStat.Value);
 
-            behavior.RemoveTalent(champion);
+            behavior.RemoveTalent(massiveAttack);
 
-            Verify.AreEqual(oldAttackValue, attackStat.Value);
-            Verify.AreEqual(oldDamageValue, damageStat.Value);
+            Verify.AreEqual(oldDamaveValue, damageStat.Value);
         }
     }
 }

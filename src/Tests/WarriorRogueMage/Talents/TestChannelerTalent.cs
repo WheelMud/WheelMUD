@@ -11,26 +11,20 @@
 namespace WheelMUD.Tests.Talents
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-    using NUnit.Framework;
-
     using WarriorRogueMage;
     using WarriorRogueMage.Attributes;
     using WarriorRogueMage.Behaviors;
     using WarriorRogueMage.Stats;
-
     using WheelMUD.Core;
 
     /// <summary>Tests the TalentChanneler class.</summary>
     [TestClass]
-    [TestFixture]
     public class TestChannelerTalent
     {
         /// <summary>Common actors in the test.</summary>
         private Thing playerThing;
 
         [TestInitialize]
-        [SetUp]
         public void Init()
         {
             var testBehavior = new TalentsBehavior(null);
@@ -61,7 +55,6 @@ namespace WheelMUD.Tests.Talents
 
         /// <summary>Tests the channeler talent added mechanism.</summary>
         [TestMethod]
-        [Test]
         public void TestChannelerTalentAddedMechanism()
         {
             var channeler = new ChannelerTalent();
@@ -78,7 +71,6 @@ namespace WheelMUD.Tests.Talents
 
         /// <summary>Tests the channeler talent auto set rule.</summary>
         [TestMethod]
-        [Test]
         public void TestChannelerTalentAutosetRule()
         {
             var channeler = new ChannelerTalent();

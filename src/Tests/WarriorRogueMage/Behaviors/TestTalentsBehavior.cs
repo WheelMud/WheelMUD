@@ -11,24 +11,19 @@
 namespace WheelMUD.Tests.Behaviors
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-    using NUnit.Framework;
-
     using WarriorRogueMage;
     using WarriorRogueMage.Attributes;
     using WarriorRogueMage.Behaviors;
     using WarriorRogueMage.Stats;
-
     using WheelMUD.Core;
 
-    [TestClass()][TestFixture]
+    [TestClass()]
     public class TestTalentsBehavior
     {
         /// <summary>Common actors in the test.</summary>
         private Thing playerThing;
 
         [TestInitialize]
-        [SetUp]
         public void Init()
         {
             this.playerThing = new Thing() { Name = "PlayerThing", ID = TestThingID.Generate("testthing") };
@@ -36,7 +31,6 @@ namespace WheelMUD.Tests.Behaviors
 
         /// <summary>Test to make sure WRM behaviors are attaching properly.</summary>
         [TestMethod]
-        [Test]
         public void AttachTalentsBehaviorToPlayerTest()
         {
             var testBehavior = new TalentsBehavior(null);
@@ -49,7 +43,6 @@ namespace WheelMUD.Tests.Behaviors
         } 
 
         [TestMethod]
-        [Test]
         public void AddTalentBeforeBehaviorParentSetTest()
         {
             var testTalent = new CraftsmanTalent();
@@ -70,7 +63,6 @@ namespace WheelMUD.Tests.Behaviors
         }
 
         [TestMethod]
-        [Test]
         public void AddTalentWithRulesBeforeBehaviorParentSetTest()
         {
             var testBehavior = new TalentsBehavior(null);
@@ -113,7 +105,6 @@ namespace WheelMUD.Tests.Behaviors
         }
 
         [TestMethod]
-        [Test]
         public void AddBehaviorBeforeTalentParentSetTest()
         {
             var testTalent = new CraftsmanTalent();
@@ -134,7 +125,6 @@ namespace WheelMUD.Tests.Behaviors
         }
 
         [TestMethod]
-        [Test]
         public void AddBehaviorBeforeTalentWithRulesParentSetTest()
         {
             var testBehavior = new TalentsBehavior(null);

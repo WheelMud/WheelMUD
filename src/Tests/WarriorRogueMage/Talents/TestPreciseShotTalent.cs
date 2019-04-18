@@ -11,7 +11,6 @@
 namespace WheelMUD.Tests.Talents
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using NUnit.Framework;
     using WarriorRogueMage;
     using WarriorRogueMage.Attributes;
     using WarriorRogueMage.Behaviors;
@@ -20,14 +19,12 @@ namespace WheelMUD.Tests.Talents
 
     /// <summary>Tests the TalentPreciseShot class.</summary>
     [TestClass()]
-    [TestFixture]
     public class TestPreciseShotTalent
     {
         /// <summary>Common actors in the test.</summary>
         private Thing playerThing;
 
         [TestInitialize]
-        [SetUp]
         public void Init()
         {
             var testBehavior = new TalentsBehavior(null);
@@ -58,7 +55,6 @@ namespace WheelMUD.Tests.Talents
 
         /// <summary>Tests the precise shot talent added mechanism.</summary>
         [TestMethod]
-        [Test]
         public void TestPreciseShotTalentAddedMechanism()
         {
             var preciseShot = new PreciseShotTalent();
@@ -75,7 +71,6 @@ namespace WheelMUD.Tests.Talents
 
         /// <summary>Tests the precise shot talent auto set rule.</summary>
         [TestMethod]
-        [Test]
         public void TestPreciseShotTalentAutosetRule()
         {
             var preciseShot = new PreciseShotTalent();
