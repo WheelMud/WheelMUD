@@ -7,21 +7,16 @@
 
 namespace WheelMUD.Tests
 {
-    using System;
-    using System.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using NUnit.Framework;
     using WheelMUD.Core;
 
     /// <summary>Tests the base ActionInput class.</summary>
     /// <remarks>In particular, the input parsing method that is called from within the ActionInput constructor.</remarks>
-    [TestFixture]
     [TestClass]
     public class TestActionInput
     {
         /// <summary>Common preparation for all ActionInput tests.</summary>
         [TestInitialize]
-        [SetUp]
         public void Init()
         {
         }
@@ -34,7 +29,6 @@ namespace WheelMUD.Tests
         /// to use a fake or mock IController.
         /// </remarks>
         [TestMethod]
-        [Test]
         public void TestParseText()
         {
             // Test empty string

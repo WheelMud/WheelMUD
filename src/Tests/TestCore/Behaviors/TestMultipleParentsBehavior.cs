@@ -10,11 +10,10 @@
 namespace WheelMUD.Tests.Behaviors
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using NUnit.Framework;
     using WheelMUD.Core;
     
     /// <summary>Tests for the MultipleParentsBehavior class.</summary>
-    [TestClass][TestFixture]
+    [TestClass]
     public class TestMultipleParentsBehavior
     {
         /// <summary>The actors in the test.</summary>
@@ -24,7 +23,7 @@ namespace WheelMUD.Tests.Behaviors
         private MultipleParentsBehavior multipleParentsBehavior;
 
         /// <summary>Common preparation for all MultipleParentsBehavior tests.</summary>
-        [TestInitialize][SetUp]
+        [TestInitialize]
         public void Init()
         {
             // Create 2 things and a basic MultipleParentsBehavior for testing.
@@ -35,7 +34,7 @@ namespace WheelMUD.Tests.Behaviors
         }
 
         /// <summary>Test normal parenting behaviors without a MultipleParentsBehavior being attached.</summary>
-        [TestMethod][Test]
+        [TestMethod]
         public void TestSingleParentingBehavior()
         {
             // Verify that a thing which has not yet been added to a parent, has none.
@@ -62,7 +61,6 @@ namespace WheelMUD.Tests.Behaviors
 
         /// <summary>Test an unattached MultipleParentsBehavior.</summary>
         [TestMethod]
-        [Test]
         public void TestUnattachedMultipleParentsBehavior()
         {
             // Verify that messing with a MultipleParentsBehavior while it is not attached to a host thing
@@ -72,7 +70,7 @@ namespace WheelMUD.Tests.Behaviors
         }
 
         /// <summary>Test parenting behaviors with a MultipleParentsBehavior attached.</summary>
-        [TestMethod][Test]
+        [TestMethod]
         public void TestMultipleParentingBehavior()
         {
             // Verify we can add and retrieve the MultipleParentsBehavior of a Thing.

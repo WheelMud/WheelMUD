@@ -10,12 +10,11 @@
 namespace WheelMUD.Tests.Behaviors
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using NUnit.Framework;
     using WheelMUD.Core;
     using WheelMUD.Core.Events;
     
     /// <summary>Tests for the OpensClosesBehavior class.</summary>
-    [TestClass][TestFixture]
+    [TestClass]
     public class TestOpensClosesBehavior
     {
         /// <summary>Common actors in the test.</summary>
@@ -31,7 +30,7 @@ namespace WheelMUD.Tests.Behaviors
         private GameEvent lastWitnessEvent, lastActorEvent;
 
         /// <summary>Common preparation for all OpensClosesBehavior tests.</summary>
-        [TestInitialize][SetUp]
+        [TestInitialize]
         public void Init()
         {
             // Create the basic actor instances and behavior for test.
@@ -54,7 +53,7 @@ namespace WheelMUD.Tests.Behaviors
         }
 
         /// <summary>Test OpensClosesBehavior without an attached parent.</summary>
-        [TestMethod][Test]
+        [TestMethod]
         public void TestUnattachedOpensClosesBehavior()
         {
             // Verify that an unattached behavior does not change state between Open/Close attempts, and
@@ -68,7 +67,7 @@ namespace WheelMUD.Tests.Behaviors
         }
 
         /// <summary>Test normal OpensClosesBehavior operation.</summary>
-        [TestMethod][Test]
+        [TestMethod]
         public void TestOpeningAndClosing()
         {
             this.openableThing.Behaviors.Add(this.opensClosesBehavior);
@@ -128,7 +127,7 @@ namespace WheelMUD.Tests.Behaviors
         }
 
         /// <summary>Test special OpensClosesBehavior operations for exits.</summary>
-        [TestMethod][Test]
+        [TestMethod]
         public void TestOpeningClosingAndMovementForExits()
         {
             // Create two one-way exits and two rooms to attach them to.

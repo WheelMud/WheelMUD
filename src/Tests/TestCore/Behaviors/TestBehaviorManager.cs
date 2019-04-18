@@ -10,14 +10,10 @@
 namespace WheelMUD.Tests.Behaviors
 {
     using System;
-    using System.Linq;
-    using System.Threading;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using NUnit.Framework;
     using WheelMUD.Core;
 
     /// <summary>Tests for the BehaviorManager class.</summary>
-    [TestFixture]
     [TestClass]
     public class TestBehaviorManager
     {
@@ -29,7 +25,6 @@ namespace WheelMUD.Tests.Behaviors
 
         /// <summary>Common preparation for the PlayerBehavior tests.</summary>
         [TestInitialize]
-        [SetUp]
         public void Init()
         {
             this.thing = new Thing();
@@ -38,7 +33,6 @@ namespace WheelMUD.Tests.Behaviors
 
         /// <summary>Tests BehaviorManager support for simultaneous add/remove/iterate attempts.</summary>
         [TestMethod]
-        [Test]
         public void TestRapidAddRemoveIterateAcrossThreads()
         {
             // Start with a bunch of behaviors already collected, to work with.

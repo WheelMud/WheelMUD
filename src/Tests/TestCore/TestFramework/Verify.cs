@@ -10,7 +10,6 @@
 namespace WheelMUD.Tests
 {
     using System;
-    using System.Diagnostics;
 
     /// <summary>Wrapper for the Assert methods of whatever test case framework is running the current unit tests.</summary>
     public static class Verify
@@ -36,6 +35,12 @@ namespace WheelMUD.Tests
         /// <summary>Initializes static members of the Verify class.</summary>
         static Verify()
         {
+            WireMSTestAsserts();
+
+            /* TODO: If we need NUnit support again, we should probably find an external way to use a single set of
+             *       [Attributes] for setup and test declaration, as well as a way to avoid "NUnit" and "Microsoft"
+             *       using statements having to be on each test class... ATM we're back to just using MSTest to ease
+             *       the porting process into .NET Standard.
             var processName = Process.GetCurrentProcess().ProcessName;
             if (processName.StartsWith("nunit", StringComparison.CurrentCultureIgnoreCase) ||
                 processName.StartsWith("JetBrains.ReSharper.TaskRunner", StringComparison.CurrentCultureIgnoreCase))
@@ -56,7 +61,7 @@ namespace WheelMUD.Tests
             {
                 string message = string.Format("Could not recognize the hosting test framework assembly: {0}", processName);
                 throw new InvalidProgramException(message);
-            }
+            } */
         }
 
         /// <summary>Verify that two objects are the same.</summary>
@@ -123,6 +128,7 @@ namespace WheelMUD.Tests
         }
 
         /// <summary>Wire up our verification methods against the NUnit assert methods.</summary>
+        /* TODO: SEE "Verify" NOTES ABOVE.
         private static void WireNUnitAsserts()
         {
             areSame = NUnit.Framework.Assert.AreSame;
@@ -132,7 +138,7 @@ namespace WheelMUD.Tests
             isNull = NUnit.Framework.Assert.IsNull;
             areEqual = NUnit.Framework.Assert.AreEqual;
             areNotEqual = NUnit.Framework.Assert.AreNotEqual;
-        }
+        } */
 
         /// <summary>Wire up our verification methods against the MSTest assert methods.</summary>
         private static void WireMSTestAsserts()

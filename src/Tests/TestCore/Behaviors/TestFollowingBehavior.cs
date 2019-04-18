@@ -11,14 +11,12 @@
 namespace WheelMUD.Tests.Behaviors
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using NUnit.Framework;
     using WheelMUD.Core;
     using WheelMUD.Core.Behaviors;
     using WheelMUD.Core.Events;
 
     /// <summary>Test cases for FollowingBehavior.</summary>
     [TestClass]
-    [TestFixture]
     public class TestFollowingBehavior
     {
         /// <summary>Common actors in the test.</summary>
@@ -32,7 +30,6 @@ namespace WheelMUD.Tests.Behaviors
 
         /// <summary>Common preparation for all FollowingBehavior tests.</summary>
         [TestInitialize]
-        [SetUp]
         public void Init()
         {
             // Create the basic actor instances and behavior for test.
@@ -78,7 +75,6 @@ namespace WheelMUD.Tests.Behaviors
 
         /// <summary>Test LocksUnlocksBehavior without an attached parent.</summary>
         [TestMethod]
-        [Test]
         public void TestUnattachedFollowingBehavior()
         {
             var followingBehavior = new FollowingBehavior();
@@ -93,7 +89,6 @@ namespace WheelMUD.Tests.Behaviors
 
         /// <summary>Verify that the default target is null.</summary>
         [TestMethod]
-        [Test]
         public void TestFollowingBehaviorStartsOutNull()
         {
             this.ClearTrackedEvents();
@@ -104,7 +99,6 @@ namespace WheelMUD.Tests.Behaviors
 
         /// <summary>Verify that Target changes to the specified victim.</summary>
         [TestMethod]
-        [Test]
         public void TestSettingTarget()
         {
             this.ClearTrackedEvents();
@@ -120,7 +114,6 @@ namespace WheelMUD.Tests.Behaviors
         /// Verify that the stalker and victim saw the follow, but it wasn't seen by the witness
         /// </summary>
         [TestMethod]
-        [Test]
         public void TestRemovingTarget()
         {
             this.ClearTrackedEvents();
@@ -147,7 +140,6 @@ namespace WheelMUD.Tests.Behaviors
 
         /// <summary>Verify sensory messages seen by stalker/victim and unseen by witness.</summary>
         [TestMethod]
-        [Test]
         public void TestFollowingMessages()
         {
             this.ClearTrackedEvents();
@@ -179,7 +171,6 @@ namespace WheelMUD.Tests.Behaviors
         /// <summary>Tests the garbage collected target.</summary>
         /// <remarks>TODO: Figure out whether it's the test or the code that's broken.</remarks>
         [TestMethod]
-        [Test]
         public void TestGarbageCollectedTarget()
         {
             ////this.ClearTrackedEvents();

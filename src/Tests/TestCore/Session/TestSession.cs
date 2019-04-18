@@ -9,31 +9,27 @@ namespace WheelMUD.Tests.Session
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.Composition;
     using System.ComponentModel.Composition.Hosting;
     using System.Text;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using NUnit.Framework;
     using WheelMUD.Core;
     using WheelMUD.Interfaces;
 
     /// <summary>Tests the Session class.</summary>
-    [TestFixture]
     [TestClass]
     public class TestSession
     {
         /// <summary>Common preparation for all Session tests.</summary>
         [TestInitialize]
-        [SetUp]
         public void Init()
         {
             DefaultComposer.Container = new CompositionContainer();
-            DefaultComposer.Container.ComposeExportedValue<SessionState>(new FakeSessionState());
+            // @@@ TODO: https://blog.softwarepotential.com/porting-to-net-standard-2-0-part-2-porting-mef-1-0-to-mef-2-0-on-net-core/
+            // DefaultComposer.Container.ComposeExportedValue<SessionState>(new FakeSessionState());
         }
-        
+
         /// <summary>Test that the initial SessionState, upon establishing a fake connection, is FakeSessionState.</summary>
         [TestMethod]
-        [Test]
         public void TestInitialConnectionStateIsNotDefaultState()
         {
             string endl = Environment.NewLine;
@@ -44,7 +40,6 @@ namespace WheelMUD.Tests.Session
 
         /// <summary>Tests that the initial connection receives appropriate login prompts.</summary>
         [TestMethod]
-        [Test]
         public void TestInitialConnectionPromptsAfterEachWrite()
         {
             string endl = Environment.NewLine;

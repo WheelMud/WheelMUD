@@ -10,11 +10,9 @@
 namespace WheelMUD.Tests.Behaviors
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using NUnit.Framework;
     using WheelMUD.Core;
 
     /// <summary>Tests for the ExitBehavior class.</summary>
-    [TestFixture]
     [TestClass]
     public class TestPlayerBehavior
     {
@@ -23,7 +21,6 @@ namespace WheelMUD.Tests.Behaviors
 
         /// <summary>Common preparation for the PlayerBehavior tests.</summary>
         [TestInitialize]
-        [SetUp]
         public void Init()
         {
             this.playerBehavior = new PlayerBehavior();
@@ -31,7 +28,6 @@ namespace WheelMUD.Tests.Behaviors
 
         /// <summary>Tests a password with spaces.</summary>
         [TestMethod]
-        [Test]
         public void TestPasswordWithSpaces()
         {
             string password = "correct horse battery staple";
@@ -43,7 +39,6 @@ namespace WheelMUD.Tests.Behaviors
 
         /// <summary>Tests a password with outside spaces.</summary>
         [TestMethod]
-        [Test]
         public void TestPasswordWithOutsideSpaces()
         {
             string password = "  foo bar  ";
