@@ -3,9 +3,6 @@
 //   Copyright (c) WheelMUD Development Team.  See LICENSE.txt.  This file is 
 //   subject to the Microsoft Public License.  All other rights reserved.
 // </copyright>
-// <summary>
-//   Class that will hold a game racial template.
-// </summary>
 //-----------------------------------------------------------------------------
 
 namespace WheelMUD.Core
@@ -24,10 +21,6 @@ namespace WheelMUD.Core
 
         /// <summary>Gets or sets the racial stats.</summary>
         public List<GameStat> RacialStats { get; set; }
-
-        /// <summary>Gets or sets the racial custom tables.</summary>
-        /// <remarks>This is where anything that doesn't have an obvious place goes.</remarks>
-        public Dictionary<string, GameTable> RacialCustomTables { get; set; }
 
         /// <summary>Gets or sets the racial attributes.</summary>
         public List<GameAttribute> RacialAttributes { get; set; }

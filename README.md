@@ -9,7 +9,7 @@ WheelMUD is a framework for creating Multiple-User Dimensions (MUDs) using the .
 There is lots of information about WheelMUD, and [Documentation](Documentation/README.md) for WheelMUD, available right here in the source tree.
 Get started at the [Documentation](Documentation/README.md) root, where you will find things ranging from the [Project Goals](Documentation/ProjectGoals.md) to [Development](Documentation/Development/README.md)-oriented information.
 
-There are a lot more information in old discussions and design documents buried in [muds.gamedev.com](http://muds.gamedev.com). We are in the process of rebuilding GitHub-friendly documentation and design documents from the gems hidden within. Please bear with us on that front.
+WheelMUD has had a long history, has migrated hosting sites/strategies multiple times (and even began its life in VB instead of C# well before my own involvement) and continues to evolve.  There is a lot more information in old discussions and design documents that have been preserved in captures from forums of old; We are in the process of rebuilding GitHub-friendly documentation and design documents from the gems hidden within those archives. Please bear with us on that front, and ask if you would like information or guidance on a particular feature or area of interest you'd like to get involved in, so we can prioritize accordingly.
 
 ## Quick Setup
 Here's the short version of the setup instructions, mainly for seasoned developers:
@@ -22,9 +22,9 @@ Here's the short version of the setup instructions, mainly for seasoned develope
 See [Getting Started](Documentation/GettingStarted.md) from the [Documentation](Documentation/README.md) pages for a more thorough walk-through to get up and running.
 
 ## GitHub Processes
-* Feel free to introduce yourself and ask questions and such in the Issues section. General banter will likely eventually be closed, after any issues/bugs/tasks have been diligently extracted to separate, tracked issues.
-* Please comment on an issue if you plan to take it on, so we do not accidentally duplicate efforts.
-* Pull requests should generally target WheelMud/WheelMUD.
+* Feel free to introduce yourself and ask questions and such in at the [Welcome Thread](https://github.com/DavidRieman/WheelMUD/discussions/20) in Discussions.
+* Please comment on an issue if you plan to take it on, so we do not accidentally duplicate efforts. We are also starting to experiment with the GitHub Projects tab, so feel free to check that out.
+* Pull requests should generally target DavidRieman/WheelMUD.
 
 ## License
 Microsoft Public License (MS-PL). [Read Here](src/LICENSE.txt).
